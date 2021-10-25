@@ -1,3 +1,13 @@
+
+# svu-name-generator
+A basic name generator app for students to fork and use.
+
+# Other sample name generators:
+https://www.bbc.co.uk/gloucestershire/focus/2005/08/prog_rock_name.shtml
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
