@@ -38,10 +38,10 @@ function Main(props) {
         
 
         <Grid container alignItems="center" spacing={1}>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3} textAlign="center">
+            <Grid item xs={0} md={3}> </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
                
-                <Card sx={{ maxWidth: 345 }}>
+                <Card >
                     <CardActionArea onClick={handleOpenModalViking}>
                         <CardMedia
                         component="img"
@@ -61,9 +61,9 @@ function Main(props) {
                 </Card>
                 
             </Grid>
-            <Grid item xs={3} textAlign="center">
+            <Grid item xs={12} md={3} textAlign="center">
                
-                <Card sx={{ maxWidth: 345 }}>
+                <Card >
                     <CardActionArea onClick={handleOpenModalKnight}>
                         <CardMedia
                         component="img"
@@ -83,7 +83,7 @@ function Main(props) {
                 </Card>
                 
             </Grid>
-            <Grid item xs={3}></Grid>
+            <Grid item xs={0} md={3}></Grid>
         </Grid>
         </>
     )
