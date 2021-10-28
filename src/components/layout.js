@@ -33,7 +33,7 @@ function Layout(props) {
 
     return (
         <div className={classes.root}>
-            <AppBar position="fixed" >
+            <AppBar position="fixed" sx={{ backgroundColor: "#981e32" }} >
                 <Toolbar>
                     
                     <Grid container alignItems="center" spacing={1}>
@@ -43,7 +43,7 @@ function Layout(props) {
                             </IconButton>
                         </Grid>
                         <Grid item xs={8} textAlign="center"> 
-                            <Typography   >Name Generator</Typography>
+                            <Typography   >SVU Name Generator</Typography>
                         </Grid>
                         <Grid item xs={2}></Grid>
                     </Grid>
