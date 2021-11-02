@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import {  Button, Divider, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputLabel, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material"
+import {  Button, Divider, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputLabel, Radio, RadioGroup, Select, Typography } from "@mui/material"
 // import { makeStyles } from '@mui/styles';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Box } from '@mui/system';
 
-import knightLast from './data/knightLast.json'
-import knightFirst from './data/knightFirst.json'
-import monthsList from '../data/monthsList.json'
+import genshinElement from './data/genshinElement.json'
+import genshinWeapon from './data/genshinWeapon.json'
+import genshinFemaleName from './data/genshinFemaleName.json'
+import genshinMaleName from './data/genshinMaleName.json'
+import movieList from './data/movieList.json'
+import tasteList from './data/tasteList.json'
 
 
 const style = {
@@ -23,38 +26,34 @@ const style = {
 
 function NameGen({closeFunction}) {
   const [currentPage, setCurrentPage] = useState(1)
-  const [lastName, setLastName] = useState("")
-  const [birthMonth, setBirthMonth] = useState("JAN")
-  const [knightName, setKnightName] = useState("")
-  const [gender, setGender] = useState("DTS")
+  const [weapon, setWeapon] = useState("ACT")
+  const [elemental, setElemental] = useState("SWE")
+  const [genshinName, setGenshinName] = useState("")
+  const [gender, setGender] = useState("M")
 
-  function getFirstPart() {
-    const firstLetter = lastName.substring(0,1).toUpperCase()
-    console.log(firstLetter)
-    const firstPart = knightFirst[firstLetter]
+  function getWeapon() {
+    console.log("weapon is " + weapon)
+    const firstPart = genshinWeapon[weapon]
+    console.log("got " + firstPart)
     return firstPart
   }
 
-  function getLastPart() {
-    const lastPart = knightLast[birthMonth.toUpperCase()]
+  function getElement() {
+    console.log("flavor is " + elemental)
+    const lastPart = genshinElement[elemental.toUpperCase()]
+    console.log("Got " + lastPart)
     return lastPart
   }
 
-  function getTitle(){
-    if(gender === 'M'){
-      return "Sir"
-    } else if (gender === "F"){
-      return "Lady"
-    } else {
-      return "Knight"
-    }
-  }
-
   function getNewName() {
-    const firstPart = getFirstPart()
-    const lastPart = getLastPart()
-    const title = getTitle()
-    setKnightName(title + " " + firstPart + " " + lastPart)
+    const lastPart = getWeapon()
+    const firstPart = getElement()
+    if(gender === "M"){
+      setGenshinName(genshinMaleName[firstPart + " " + lastPart])
+    }
+    else if (gender === "F"){
+      setGenshinName(genshinFemaleName[firstPart + " " + lastPart])
+    }
     setCurrentPage(2)
   }
    
@@ -71,13 +70,13 @@ function NameGen({closeFunction}) {
               </IconButton>
             </Box>
             <Typography id="modal-modal-title" variant="h4" component="h2">
-              Knight Name
+              Genshin Impact Name
             </Typography>
             <Divider/>
             {(currentPage === 1) ? (
               <>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Find out your Knight name so you can properly defend and protect.
+                Create a new Genshin Impact character so that people can start pulling for them!
               </Typography>
               <Box
                 component="form"
@@ -93,27 +92,44 @@ function NameGen({closeFunction}) {
                   <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
                     <FormControlLabel value="F" onChange={e => setGender(e.target.value)} control={<Radio />} label="Female" />
                     <FormControlLabel value="M" onChange={e => setGender(e.target.value)} control={<Radio />} label="Male" />
-                    <FormControlLabel value="DTS" onChange={e => setGender(e.target.value)} control={<Radio />} label="Other" />
-                   
+
                   </RadioGroup>
                 </FormControl>
 
-
-                <TextField value={lastName} onChange={e => setLastName(e.target.value)} id="first-name" label="Last Name" variant="outlined" />
-
                 <FormControl>
-                      <InputLabel htmlFor="birthMonth">Birth Month</InputLabel>
+                      <InputLabel htmlFor="weapon">Favorite Movie Genre</InputLabel>
                       <Select
                       
                       native
-                      value={birthMonth}
-                      onChange={e => setBirthMonth(e.target.value)}
+                      value={weapon}
+                      onChange={e => setWeapon(e.target.value)}
                       inputProps={{
-                          name: 'birthMonth',
-                          id: 'birthMonth',
+                          name: 'weapon',
+                          id: 'weapon',
                       }}
                       >
-                        {monthsList.map((option) => (
+                        {movieList.map((option) => (
+                            <option key={option.value} value={option.value}  >
+                            {option.label}
+                            </option>
+                        ))}
+
+                      </Select>
+                  </FormControl>
+
+                <FormControl>
+                      <InputLabel htmlFor="elemental">Favorite Flavor</InputLabel>
+                      <Select
+                      
+                      native
+                      value={elemental}
+                      onChange={e => setElemental(e.target.value)}
+                      inputProps={{
+                          name: 'elemental',
+                          id: 'elemental',
+                      }}
+                      >
+                        {tasteList.map((option) => (
                             <option key={option.value} value={option.value}  >
                             {option.label}
                             </option>
@@ -123,16 +139,16 @@ function NameGen({closeFunction}) {
                   </FormControl>
                 
                 
-                <Button onClick={getNewName} variant="outlined">Get Your Knight Name</Button>
+                <Button onClick={getNewName} variant="outlined">Get Your Genshin Character</Button>
               </Box>
               </>  
             ) : (
               <>
                 <Typography id="modal-modal-title" variant="h5" component="h2" sx={{marginTop:"1em"}}>
-                  Your Knight Name is...
+                  Your Genshin Impact Character is...
                 </Typography>
                 <Typography id="modal-modal-title" variant="h3" component="h2" sx={{marginTop:"1em"}}>
-                  {knightName}
+                  {genshinName + " the " + getElement() + " " + getWeapon() + " User"}
                 </Typography>
               </>
               

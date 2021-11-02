@@ -1,0 +1,39 @@
+From Line 75
+<Grid item xs={12} md={3} textAlign="center">
+               
+                <Card >
+                    <CardActionArea onClick={handleOpenModalKnight}>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/knight.jpg"
+                        alt="viking"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Knight Name
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Defend against evil doers and spread peace throughout the land.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+                
+            </Grid>
+
+From line 22
+
+    const handleOpenModalKnight = () => {
+        setOpenModalKnight(true)
+    }
+    const handleCloseModalKnight = () => {
+        setOpenModalKnight(false)
+    }
+
+From line 13
+    const [openModalKnight, setOpenModalKnight] = useState(false)
+From line 33
+        <Modal open={openModalKnight}  onClose={handleCloseModalKnight} >
+            <KnightName  closeFunction={handleCloseModalKnight} /> 
+        </Modal>
