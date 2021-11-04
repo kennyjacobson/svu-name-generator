@@ -6,11 +6,13 @@ import {  Card, CardActionArea, CardContent, CardMedia, Grid,  Modal, Typography
 // import AdbIcon from '@mui/icons-material/Adb'
 import VikingName from '../components/viking/nameGen'
 import KnightName from '../components/knight/nameGen'
+import PllName from '../components/pll/nameGen'
 
 
 function Main(props) {
     const [openModalViking, setOpenModalViking] = useState(false)
     const [openModalKnight, setOpenModalKnight] = useState(false)
+    const [openModalPll, setOpenModalPll] = useState(false)
 
     const handleOpenModalViking = () => {
         setOpenModalViking(true)
@@ -26,6 +28,13 @@ function Main(props) {
         setOpenModalKnight(false)
     }
 
+    const handleOpenModalPll = () => {
+        setOpenModalPll(true)
+    }
+    const handleCloseModalPll = () => {
+        setOpenModalPll(false)
+    }
+
     
     return (
         <>
@@ -35,7 +44,9 @@ function Main(props) {
         <Modal open={openModalViking}  onClose={handleCloseModalViking} >
             <VikingName  closeFunction={handleCloseModalViking} /> 
         </Modal>
-        
+        <Modal open={openModalPll}  onClose={handleCloseModalPll} >
+            <PllName  closeFunction={handleCloseModalPll} /> 
+        </Modal>
 
         <Grid container alignItems="center" spacing={1}>
             <Grid item xs={0} md={3}> </Grid>
@@ -77,6 +88,30 @@ function Main(props) {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Defend against evil doers and spread peace throughout the land.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+                
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+               
+                <Card >
+                    <CardActionArea onClick={handleOpenModalPll}>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/lacrosse_player.jpeg"
+                        alt="viking"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Lacrosse Name
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Get your lacrosse name.
                         </Typography>
                         </CardContent>
                     </CardActionArea>

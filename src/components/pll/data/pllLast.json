@@ -1,0 +1,14 @@
+{
+    "JAN" : "Attack",
+    "FEB" : "Attack",
+    "MAR" : "Attack",
+    "APR" : "Midfielder",
+    "MAY" : "Midfielder",
+    "JUN" : "Midfielder",
+    "JUL" : "Defense",
+    "AUG" : "Defense",
+    "SEP" : "Defense",
+    "OCT" : "Goalie",
+    "NOV" : "Goalie",
+    "DEC" : "Goalie"
+    }
