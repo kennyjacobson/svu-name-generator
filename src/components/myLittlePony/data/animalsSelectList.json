@@ -1,0 +1,42 @@
+[
+    {
+        "value": "Bear",
+        "label": "Bear"
+    },
+    {
+        "value": "Lion",
+        "label": "Lion"
+    },
+    {
+        "value": "Dolphin",
+        "label": "Dolphin"
+    },
+    {
+        "value": "Horse",
+        "label": "Horse"
+    },
+    {
+        "value": "Puppy",
+        "label": "Puppy"
+    },
+    {
+        "value": "Monkey",
+        "label": "Monkey"
+    },
+    {
+        "value": "Rabbit",
+        "label": "Rabbit"
+    },
+    {
+        "value": "Tiger",
+        "label": "Tiger"
+    },
+    {
+        "value": "Kangaroo",
+        "label": "Kangaroo"
+    },
+    {
+      "value": "Crocodile",
+      "label": "Crocodile"
+    }
+  ]

@@ -1,0 +1,14 @@
+{
+    "JAN" : "Archers",
+    "FEB" : "Archers",
+    "MAR" : "Atlas",
+    "APR" : "Atlas",
+    "MAY" : "Cannons",
+    "JUN" : "Chaos",
+    "JUL" : "Chrome",
+    "AUG" : "Whipsnakes",
+    "SEP" : "Redwoods",
+    "OCT" : "Redwoods",
+    "NOV" : "Waterdogs",
+    "DEC" : "Waterdogs"
+    }

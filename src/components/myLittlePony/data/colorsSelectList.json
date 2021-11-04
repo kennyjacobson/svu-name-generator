@@ -1,0 +1,42 @@
+[
+    {
+        "value": "Red",
+        "label": "Red"
+    },
+    {
+        "value": "Orange",
+        "label": "Orange"
+    },
+    {
+        "value": "Yellow",
+        "label": "Yellow"
+    },
+    {
+        "value": "Green",
+        "label": "Green"
+    },
+    {
+        "value": "Blue",
+        "label": "Blue"
+    },
+    {
+        "value": "Purple",
+        "label": "Purple"
+    },
+    {
+        "value": "Pink",
+        "label": "Pink"
+    },
+    {
+        "value": "White",
+        "label": "White"
+    },
+    {
+        "value": "Black",
+        "label": "Black"
+    },
+    {
+      "value": "Brown",
+      "label": "Brown"
+    }
+  ]

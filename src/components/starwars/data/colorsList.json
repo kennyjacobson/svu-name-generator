@@ -1,0 +1,50 @@
+[
+    {
+        "value": "BLE",
+        "label": "Blue"
+    },
+    {
+        "value": "RED",
+        "label": "Red"
+    },
+    {
+        "value": "BLC",
+        "label": "Black"
+    },
+    {
+        "value": "GRN",
+        "label": "Green"
+    },
+    {
+        "value": "YLW",
+        "label": "Yellow"
+    },
+    {
+        "value": "GRY",
+        "label": "Grey"
+    },
+    {
+        "value": "ORG",
+        "label": "Orange"
+    },
+    {
+        "value": "PUR",
+        "label": "Purple"
+    },
+    {
+        "value": "PNK",
+        "label": "Pink"
+    },
+    {
+      "value": "CYN",
+      "label": "Cyan"
+    },
+    {
+      "value": "BRN",
+      "label": "Brown"
+    },
+    {
+      "value": "WHT",
+      "label": "White"
+    }
+  ]

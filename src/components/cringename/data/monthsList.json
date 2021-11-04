@@ -1,0 +1,34 @@
+[
+    {
+        "value": "JAN",
+        "label": "Billie Eilish"
+    },
+    {
+        "value": "FEB",
+        "label": "Justin Bieber"
+    },
+    {
+        "value": "MAR",
+        "label": "Olivia Rodriguez"
+    },
+    {
+        "value": "APR",
+        "label": "Taylor Swift"
+    },
+    {
+        "value": "MAY",
+        "label": "Ariana Grande"
+    },
+    {
+        "value": "JUN",
+        "label": "BTS"
+    },
+    {
+        "value": "JUL",
+        "label": "Drake"
+    },
+    {
+        "value": "AUG",
+        "label": "Lady Gaga"
+    }
+  ]
