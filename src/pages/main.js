@@ -5,12 +5,18 @@ import {  Card, CardActionArea, CardContent, CardMedia, Grid,  Modal, Typography
 // import WhatshotIcon from '@mui/icons-material/Whatshot'
 // import AdbIcon from '@mui/icons-material/Adb'
 import VikingName from '../components/viking/nameGen'
+
 import GenshinName from '../components/genshin/nameGen'
+import KnightName from '../components/knight/nameGen'
+import PllName from '../components/pll/nameGen'
 
 
 function Main(props) {
     const [openModalViking, setOpenModalViking] = useState(false)
-    const [oponModalGenshin, setOpenModalGenshin] = useState(false)
+    const [openModalGenshin, setOpenModalGenshin] = useState(false)
+    const [openModalKnight, setOpenModalKnight] = useState(false)
+    const [openModalPll, setOpenModalPll] = useState(false)
+
 
     const handleOpenModalViking = () => {
         setOpenModalViking(true)
@@ -27,6 +33,13 @@ function Main(props) {
         setOpenModalGenshin(false)
     }
 
+    const handleOpenModalPll = () => {
+        setOpenModalPll(true)
+    }
+    const handleCloseModalPll = () => {
+        setOpenModalPll(false)
+    }
+
     
     return (
         <>
@@ -34,10 +47,14 @@ function Main(props) {
         <Modal open={openModalViking}  onClose={handleCloseModalViking} >
             <VikingName  closeFunction={handleCloseModalViking} /> 
         </Modal>
-        <Modal open={oponModalGenshin}  onClose={handleCloseModalGenshin} >
+
+        <Modal open={openModalGenshin}  onClose={handleCloseModalGenshin} >
             <GenshinName  closeFunction={handleCloseModalGenshin} /> 
         </Modal>
-        
+        <Modal open={openModalPll}  onClose={handleCloseModalPll} >
+            <PllName  closeFunction={handleCloseModalPll} /> 
+        </Modal>
+
 
         <Grid container alignItems="center" spacing={1}>
             <Grid item xs={0} md={3}> </Grid>
@@ -85,9 +102,33 @@ function Main(props) {
                 </Card>
                 
             </Grid>
-            <Grid item xs={0} md={3}>
 
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+               
+                <Card >
+                    <CardActionArea onClick={handleOpenModalPll}>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/lacrosse_player.jpeg"
+                        alt="viking"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Lacrosse Name
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Get your lacrosse name.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+                
             </Grid>
+            <Grid item xs={0} md={3}></Grid>
+
         </Grid>
         </>
     )
