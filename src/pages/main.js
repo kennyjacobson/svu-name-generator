@@ -7,12 +7,14 @@ import {  Card, CardActionArea, CardContent, CardMedia, Grid,  Modal, Typography
 import VikingName from '../components/viking/nameGen'
 import KnightName from '../components/knight/nameGen'
 import PllName from '../components/pll/nameGen'
+import GenshinName from '../components/genshin/nameGen'
 
 
 function Main(props) {
     const [openModalViking, setOpenModalViking] = useState(false)
     const [openModalKnight, setOpenModalKnight] = useState(false)
     const [openModalPll, setOpenModalPll] = useState(false)
+    const [openModalGenshin, setOpenModalGenshin] = useState(false)
 
     const handleOpenModalViking = () => {
         setOpenModalViking(true)
@@ -35,6 +37,13 @@ function Main(props) {
         setOpenModalPll(false)
     }
 
+    const handleOpenModalGenshin = () => {
+        setOpenModalGenshin(true)
+    }
+    const handleCloseModalGenshin = () => {
+        setOpenModalGenshin(false)
+    }
+
     
     return (
         <>
@@ -46,6 +55,9 @@ function Main(props) {
         </Modal>
         <Modal open={openModalPll}  onClose={handleCloseModalPll} >
             <PllName  closeFunction={handleCloseModalPll} /> 
+        </Modal>
+        <Modal open={openModalGenshin}  onClose={handleCloseModalGenshin} >
+            <GenshinName  closeFunction={handleCloseModalGenshin} /> 
         </Modal>
 
         <Grid container alignItems="center" spacing={1}>
@@ -112,6 +124,28 @@ function Main(props) {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Get your lacrosse name.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+                
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+               
+                <Card >
+                    <CardActionArea onClick={handleOpenModalGenshin}>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/Genshin_impact_logo.svg.png"
+                        alt="genshin"
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Genshin Name
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Prepare to fight evil in the Gacha RPG.
                         </Typography>
                         </CardContent>
                     </CardActionArea>

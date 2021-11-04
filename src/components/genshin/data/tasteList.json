@@ -1,0 +1,30 @@
+[
+    {
+        "value": "SWE",
+        "label": "Sweet"
+    },
+    {
+        "value": "SPI",
+        "label": "Spicy"
+    },
+    {
+        "value": "CRE",
+        "label": "Creamy"
+    },
+    {
+        "value": "SAV",
+        "label": "Savory"
+    },
+    {
+        "value": "BIT",
+        "label": "Bitter"
+    },
+    {
+        "value": "SAL",
+        "label": "Salty"
+    },
+    {
+        "value": "COL",
+        "label": "Cold"
+    }
+  ]

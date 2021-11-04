@@ -1,0 +1,22 @@
+[
+    {
+        "value": "ANI",
+        "label": "Anime"
+    },
+    {
+        "value": "FIC",
+        "label": "Fiction"
+    },
+    {
+        "value": "MED",
+        "label": "Medival"
+    },
+    {
+        "value": "ACT",
+        "label": "Action"
+    },
+    {
+        "value": "ADV",
+        "label": "Adventure"
+    }
+  ]
