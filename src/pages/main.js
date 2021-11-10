@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  Card, CardActionArea, CardContent, CardMedia, Grid,  Modal, Typography } from '@mui/material'
+import {  Grid,  Modal } from '@mui/material'
 // import { makeStyles } from '@mui/styles';
 // import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
 // import WhatshotIcon from '@mui/icons-material/Whatshot'
@@ -14,6 +14,7 @@ import MyLittlePonyName from '../components/myLittlePony/nameGen'
 import GreekGodName from '../components/GreekGods/nameGen'
 import Superhero from '../components/superhero/nameGen'
 import Cringename from '../components/cringename/nameGen'
+import CardDetails from '../components/cardDetails'
 
 
 function Main(props) {
@@ -86,242 +87,102 @@ function Main(props) {
 
         
         <Grid container alignItems="center" spacing={1}>
+
             <Grid item xs={0} md={3}> </Grid>
             <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalViking}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/viking.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Viking Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Find out your Viking name so you can properly pillage and conquer.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
+                <CardDetails 
+                    handleOpenModal={handleOpenModalViking} 
+                    imageLocation={"/static/images/viking.jpg"}  
+                    title={"Viking Name"} 
+                    description={"Find out your Viking name so you can properly pillage and conquer."}>
+                </CardDetails>
             </Grid>
             <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalKnight}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/knight.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Knight Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Defend against evil doers and spread peace throughout the land.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
+                <CardDetails 
+                    handleOpenModal={handleOpenModalKnight} 
+                    imageLocation={"/static/images/knight.jpg"}  
+                    title={"Knight Name"} 
+                    description={"Defend against evil doers and spread peace throughout the land."}>
+                </CardDetails>
             </Grid>
             <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalPll}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/lacrosse_player.jpeg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Lacrosse Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Get your lacrosse name.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalGenshin}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/Genshin_impact_logo.svg.png"
-                        alt="genshin"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Genshin Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Prepare to fight evil in the Gacha RPG.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
-            <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalStarwars}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/SW.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Star Wars Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Fight or join the Darkside the balance is depending on you.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
-
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalMLP}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/Mane_Six.png"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            My Little Pony Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Find your MLP name to spread your magic across the world!
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
 
             <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalPll} 
+                    imageLocation={"/static/images/lacrosse_player.jpeg"}  
+                    title={"Lacrosse Name"} 
+                    description={"Get your lacrosse name."}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalGenshin} 
+                    imageLocation={"/static/images/Genshin_impact_logo.svg.png"}  
+                    title={"Genshin Name"} 
+                    description={"Prepare to fight evil in the Gacha RPG."}>
+                </CardDetails>
+            </Grid>
             <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalGreekGod}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/greek-gods.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Greek God Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Thunderbolts and lightning. Very, very frightening...
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
-
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalSuperhero}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/heroImage.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        Superhero Name
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        Find out your superhero name and power
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
 
             <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalStarwars} 
+                    imageLocation={"/static/images/SW.jpg"}  
+                    title={"Star Wars Name"} 
+                    description={"Fight or join the Darkside the balance is depending on you."}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalMLP} 
+                    imageLocation={"/static/images/Mane_Six.png"}  
+                    title={"My Little Pony Name"} 
+                    description={"Find your MLP name to spread your magic across the world!"}>
+                </CardDetails>
+            </Grid>
             <Grid item xs={0} md={3}></Grid>
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalCringename}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/cringename.jpg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        Cringe Username
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        For a game, for netflix, or even as a new email suggestion
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
-
-            <Grid item xs={12} md={3} textAlign="center">
-               
-                <Card >
-                    <CardActionArea onClick={handleOpenModalPllT}>
-                        <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/lacrosse_team.jpeg"
-                        alt="viking"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        PLL Team
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        Find out your PLL Team!
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-                
-            </Grid>
 
             <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalGreekGod} 
+                    imageLocation={"/static/images/greek-gods.jpg"}  
+                    title={"Greek God Name"} 
+                    description={"Thunderbolts and lightning. Very, very frightening..."}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalSuperhero} 
+                    imageLocation={"/static/images/heroImage.jpg"}  
+                    title={"Superhero Name"} 
+                    description={"Find out your superhero name and power"}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
+
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalCringename} 
+                    imageLocation={"/static/images/cringename.jpg"}  
+                    title={"Cringe Username"} 
+                    description={"For a game, for netflix, or even as a new email suggestion"}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalPllT} 
+                    imageLocation={"/static/images/lacrosse_team.jpeg"}  
+                    title={"PLL Team"} 
+                    description={"Find out your PLL Team!"}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
+
         </Grid>
         </>
     )
