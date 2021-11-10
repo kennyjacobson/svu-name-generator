@@ -68,15 +68,15 @@ function Main(props) {
                         <CardMedia
                         component="img"
                         height="140"
-                        image="/static/images/knight.jpg"
-                        alt="viking"
+                        image="/static/images/Hip-Hop.jpeg"
+                        alt="Rapper"
                         />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            Knight Name
+                            Rapper Name
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            Defend against evil doers and spread peace throughout the land.
+                            Prepare to be the greatest rapper of all time.
                         </Typography>
                         </CardContent>
                     </CardActionArea>
