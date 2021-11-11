@@ -1,28 +1,16 @@
 import React, { useState } from 'react'
-import {  Button, Divider, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputLabel, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material"
-// import { makeStyles } from '@mui/styles';
-import CancelIcon from '@mui/icons-material/Cancel';
-import { Box } from '@mui/system';
+import {   FormControl, FormControlLabel, FormLabel,  InputLabel, Radio, RadioGroup, Select, TextField } from "@mui/material"
+
 
 import knightLast from './data/knightLast.json'
 import knightFirst from './data/knightFirst.json'
 import monthsList from '../data/monthsList.json'
+import NameGenModal from '../nameGenModal';
 
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'white',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
+
 
 function NameGen({closeFunction}) {
-  const [currentPage, setCurrentPage] = useState(1)
   const [lastName, setLastName] = useState("")
   const [birthMonth, setBirthMonth] = useState("JAN")
   const [knightName, setKnightName] = useState("")
@@ -55,40 +43,25 @@ function NameGen({closeFunction}) {
     const lastPart = getLastPart()
     const title = getTitle()
     setKnightName(title + " " + firstPart + " " + lastPart)
-    setCurrentPage(2)
   }
    
 
 
   return (
     <>
-    <Grid container  spacing={0}>
-        <Grid item xs={12}>
-          <Box sx={style}>
-          <Box textAlign="right" alignContent="end">
-              <IconButton onClick={closeFunction}  >
-                  <CancelIcon sx={{color:"blue"}} fontSize='large'/>
-              </IconButton>
-            </Box>
-            <Typography id="modal-modal-title" variant="h4" component="h2">
-              Knight Name
-            </Typography>
-            <Divider/>
-            {(currentPage === 1) ? (
-              <>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Find out your Knight name so you can properly defend and protect.
-              </Typography>
-              <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '45ch' },
-                }}
-                noValidate
-                autoComplete="off"
-                >
+    <NameGenModal
+      title={"Knight Name"}  
+      description={"Find out your Knight name so you can properly defend and protect."} 
+      buttonText={"Get Your Knight Name"} 
+      resultDescription={"Your Knight Name is..."} 
+      closeFunction={closeFunction} 
+      getNewNameFunction={getNewName} 
+      newName={knightName}
+    >
 
-                <FormControl component="fieldset">
+      
+
+<FormControl component="fieldset">
                   <FormLabel component="legend">Gender</FormLabel>
                   <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
                     <FormControlLabel value="F" onChange={e => setGender(e.target.value)} control={<Radio />} label="Female" />
@@ -121,25 +94,9 @@ function NameGen({closeFunction}) {
 
                       </Select>
                   </FormControl>
-                
-                
-                <Button onClick={getNewName} variant="outlined">Get Your Knight Name</Button>
-              </Box>
-              </>  
-            ) : (
-              <>
-                <Typography id="modal-modal-title" variant="h5" component="h2" sx={{marginTop:"1em"}}>
-                  Your Knight Name is...
-                </Typography>
-                <Typography id="modal-modal-title" variant="h3" component="h2" sx={{marginTop:"1em"}}>
-                  {knightName}
-                </Typography>
-              </>
-              
-            )}
-          </Box>
-        </Grid>
-    </Grid> 
+
+    </NameGenModal>
+
     </>
   )
 }
