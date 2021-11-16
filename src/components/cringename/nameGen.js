@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+/*import React, { useState } from 'react'
 import {  Button, Divider, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputLabel, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material"
 // import { makeStyles } from '@mui/styles';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Box } from '@mui/system';
+*/
+import React, { useState } from 'react'
+import {    FormControl, FormLabel, RadioGroup, FormControlLabel, Radio,  InputLabel, Select, TextField } from "@mui/material"
 
 import knightLast from './data/knightLast.json'
 import knightBirth from './data/knightBirth.json'
 import monthsList from './data/monthsList.json'
+import NameGenModal from '../nameGenModal';
 
-
-const style = {
+/*const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -19,10 +22,10 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-  };
+  };*/
 
 function NameGen({closeFunction}) {
-  const [currentPage, setCurrentPage] = useState(1)
+  /*const [currentPage, setCurrentPage] = useState(1)*/
   const [nickName, setnickName] = useState("")
   const [birthYear, setBirthYear] = useState("")
   const [favFood, setFavFood] = useState("")
@@ -82,7 +85,7 @@ function NameGen({closeFunction}) {
       }
     }
     setKnightName(fullName)
-    setCurrentPage(2)
+    /*setCurrentPage(2)*/
   }
   function getThreeNumbers(){
     var arr = [];
@@ -94,8 +97,63 @@ function NameGen({closeFunction}) {
     return arr
   }
    
-
   return (
+    <>
+    <NameGenModal 
+      title={"Cringe Username Generator"}  
+      description={"what was your 12 yr old cringe username."} 
+      buttonText={"Get Your username"} 
+      resultDescription={"Your cringe username is..."} 
+      closeFunction={closeFunction} 
+      getNewNameFunction={getNewName} 
+      newName={knightName}>
+      <FormControl component="fieldset">
+                  <FormLabel component="legend">Gender</FormLabel>
+                  <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                    <FormControlLabel value="F" onChange={e => setGender(e.target.value)} control={<Radio />} label="Female" />
+                    <FormControlLabel value="M" onChange={e => setGender(e.target.value)} control={<Radio />} label="Male" />
+                    <FormControlLabel value="DTS" onChange={e => setGender(e.target.value)} control={<Radio />} label="Other" />
+                   
+                  </RadioGroup>
+                </FormControl>
+      <TextField value={nickName} onChange={e => setnickName(e.target.value)} id="first=name" label="Nickname" variant="outlined" /> 
+      <TextField value={birthYear} onChange={e => setBirthYear(e.target.value)} id="first=name" label="Birth Year" variant="outlined" /> 
+      <TextField value={favFood} onChange={e => setFavFood(e.target.value)} id="first=name" label="Favorite Food" variant="outlined" /> 
+      <FormControl>
+            <InputLabel htmlFor="birthMonth">Favorite Band</InputLabel>
+            <Select
+            
+            native
+            value={favBand}
+            onChange={e => setFavBand(e.target.value)}
+            inputProps={{
+                name: 'birthMonth',
+                id: 'birthMonth',
+            }}
+            >
+            {monthsList.map((option) => (
+                <option key={option.value} value={option.value}  >
+                {option.label}
+                </option>
+            ))}
+            </Select>
+        </FormControl>
+    </NameGenModal>
+
+    </>
+  )
+}
+ /* 
+ <FormControl component="fieldset">
+                <FormLabel component="legend">Gender</FormLabel>
+                <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                   <FormControlLabel value="F" onChange={e => setGender(e.target.value)} control={<Radio />} label="Female" />
+                   <FormControlLabel value="M" onChange={e => setGender(e.target.value)} control={<Radio />} label="Male" />
+                   <FormControlLabel value="DTS" onChange={e => setGender(e.target.value)} control={<Radio />} label="Other" />
+                   
+                </RadioGroup>
+               </FormControl>
+ return (
     <>
     <Grid container  spacing={0}>
         <Grid item xs={12}>
@@ -180,5 +238,5 @@ function NameGen({closeFunction}) {
     </>
   )
 }
-
+*/
 export default NameGen
