@@ -14,6 +14,7 @@ import MyLittlePonyName from '../components/myLittlePony/nameGen'
 import GreekGodName from '../components/GreekGods/nameGen'
 import Superhero from '../components/superhero/nameGen'
 import Cringename from '../components/cringename/nameGen'
+import Rapper from '../components/rapper/nameGen'
 import CardDetails from '../components/cardDetails'
 
 
@@ -28,6 +29,7 @@ function Main(props) {
     const [openModalSuperhero, setOpenModalSuperhero] = useState(false)
     const [openModalCringename, setOpenModalCringename] = useState(false)
     const [openModalPllT, setOpenModalPllT] = useState(false)
+    const [openModalRapper, setOpenModalRapper] = useState(false)
     
 
     const handleOpenModalViking = () => {setOpenModalViking(true)}
@@ -50,6 +52,8 @@ function Main(props) {
     const handleCloseModalCringename = () => {setOpenModalCringename(false)}
     const handleOpenModalPllT = () => {setOpenModalPllT(true)}
     const handleCloseModalPllT = () => {setOpenModalPllT(false)}
+    const handleOpenModalRapper = () => {setOpenModalRapper(true)}
+    const handleCloseModalRapper = () => {setOpenModalRapper(false)}
 
     
     return (
@@ -84,6 +88,10 @@ function Main(props) {
         <Modal open={openModalPllT}  onClose={handleCloseModalPllT} >
             <PllTeam  closeFunction={handleCloseModalPllT} /> 
         </Modal>
+        <Modal open={openModalRapper}  onClose={handleCloseModalRapper} >
+            <Rapper  closeFunction={handleCloseModalRapper} /> 
+        </Modal>
+        
 
         
         <Grid container alignItems="center" spacing={1}>
@@ -180,6 +188,20 @@ function Main(props) {
                     title={"PLL Team"} 
                     description={"Find out your PLL Team!"}>
                 </CardDetails>
+            </Grid>
+            <Grid item xs={0} md={3}></Grid>
+
+            <Grid item xs={0} md={3}></Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                <CardDetails 
+                    handleOpenModal={handleOpenModalRapper} 
+                    imageLocation={"/static/images/Hip-Hop.jpeg"}  
+                    title={"Rapper Name"} 
+                    description={"Prepare to be the greatest rapper of all time."}>
+                </CardDetails>
+            </Grid>
+            <Grid item xs={12} md={3} textAlign="center">
+                
             </Grid>
             <Grid item xs={0} md={3}></Grid>
 
